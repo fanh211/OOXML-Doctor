@@ -36,6 +36,8 @@ MANIFEST
 #   before PyInstaller builds the exe, so as to inject date/other infos into it.
 *.manifest
 *.spec
+# 例外：本项目手写的 PyInstaller 构建配方（含内置 XSD 的 datas 声明），必须入库
+!build/ooxml-doctor.spec
 
 # Installer logs
 pip-log.txt
