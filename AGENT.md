@@ -91,7 +91,7 @@ export PYTHONPATH=src
 
 python3 tests/test_smoke.py                       # 13 项，纯合成夹具，秒级，改完必跑
 python3 -m ooxml_doctor selftest                  # 确认内置 XSD 可用且真的在判对错
-python3 -m ooxml_doctor scan ../ooxml-doctor-case/origin.pptx   # 真实样本冒烟
+python3 -m ooxml_doctor scan 样本.pptx                        # 真实样本冒烟
 python3 tests/adversarial.py --seed 42            # 改规则/修复后必跑（约 80s）
 ```
 

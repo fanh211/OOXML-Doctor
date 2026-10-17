@@ -99,6 +99,14 @@ def render_diagnostic(d: Diagnostic, p: Paint, width: int) -> list[str]:
 def verdict_lines(bag: Bag, p: Paint, path: str, width: int) -> list[str]:
     out: list[str] = []
     out.append(p.bold("▶ 判定"))
+
+    io_err = [d for d in bag.items if d.code == "IO"]
+    if io_err:
+        out.append(p.red("  无法读取该文件，后续所有检查都没有执行。"))
+        out.append(f"  原因：{io_err[0].message}")
+        out.append(p.dim("  请确认路径正确、文件未被占用、且确有读取权限。"))
+        return out
+
     if bag.will_repair:
         trig = bag.repair_triggers
         codes = sorted({d.code for d in trig})

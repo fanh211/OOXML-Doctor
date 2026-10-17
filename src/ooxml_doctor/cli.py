@@ -70,6 +70,8 @@ def cmd_scan(args: argparse.Namespace) -> int:
         print(render_json(bag, path=args.file))
     else:
         print(render(bag, path=args.file, color=not args.no_color, verbose=args.verbose))
+    if any(d.code == "IO" for d in bag.items):
+        return EXIT_USAGE        # 读不到文件 ≠ "文件健康"
     return EXIT_ISSUES if bag.will_repair else EXIT_OK
 
 

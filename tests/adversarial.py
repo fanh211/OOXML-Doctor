@@ -39,8 +39,7 @@ from ooxml_doctor.oracle import render_text, verify      # noqa: E402
 
 # 真实样本**不随仓库分发**（第三方课件，见 THIRD-PARTY-NOTICES.md §5）。
 # 用 --origin 或环境变量 OOXML_DOCTOR_FIXTURE 指定；缺省指向本机的案例目录。
-ORIGIN = os.environ.get("OOXML_DOCTOR_FIXTURE",
-                        "/home/trixie/ooxml-doctor-case/origin.pptx")
+ORIGIN = os.environ.get("OOXML_DOCTOR_FIXTURE", "sample.pptx")
 base_path_global = ORIGIN   # 由 main() 覆盖为重打包后的基准
 WORK = "/tmp/adversarial"
 

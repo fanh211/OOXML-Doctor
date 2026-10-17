@@ -5,7 +5,7 @@
 # 注意：--render 需要 soffice + pdftotext/pdfinfo，属**开发期**验证；
 #       Windows 上只做 scan/repair 完全用不到它。
 set -u
-ORIGIN="${1:-/home/trixie/ooxml-doctor-case/origin.pptx}"
+ORIGIN="${1:-sample.pptx}"
 OUT="${2:-./validation-out}"
 REPO="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$REPO"
