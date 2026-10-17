@@ -8,7 +8,12 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-build/
+# 构建中间产物：忽略内容、但保留构建脚本本身
+build/*
+!/build/*.py
+!/build/*.bat
+!/build/*.spec
+!/build/*.md
 develop-eggs/
 dist/
 downloads/

@@ -77,7 +77,7 @@ ooxml-doctor repair <pptx> --level high    # 激进修复：多做不伤文件�
    把资源解到临时目录 —— zipapp 形态下 `Path(__file__)` 读不到包内文件。
    改 `schemas/` 相关代码后**必须** `ooxml-doctor selftest`。
 
-10. **许可证文件不能丢。** `LICENSE`（MIT，仅覆盖源码）、`THIRD-PARTY-NOTICES.md`、
+10. **许可证文件不能丢。** `LICENSE`（GPLv3，仅覆盖本项目源码）、`THIRD-PARTY-NOTICES.md`、
     `src/ooxml_doctor/schemas/README.md`、`src/ooxml_doctor/NOTICE.txt`（内嵌进包）。
     打包时 `NOTICE.txt` 必须进 `datas`，否则单文件分发的 `licenses` 读不到 = 不合规。
 
@@ -132,12 +132,16 @@ PyInstaller **不能交叉编译**：Windows 的 exe 只能在 Windows 上构建
 
 ## 7. 合规
 
-- 源码 MIT（`LICENSE`）。
+- 源码 **GPLv3**（`LICENSE`，`GPL-3.0-only`）。改许可需同步改 `pyproject.toml` 与全部文档。
 - `src/ooxml_doctor/schemas/*.xsd` 是 **ISO/IEC 29500-4:2016** 标准文件，
-  **版权 ISO/IEC + Ecma International，不属于 MIT**。本项目不对其再分发权利作任何声明。
+  **版权 ISO/IEC + Ecma International，不属于 GPLv3，是"仅被聚合"的独立作品**。
+  本项目不对其再分发权利作任何声明。
 - 需要时：`build/build.py exe --no-schemas`、`--schemas DIR`、`OOXML_DOCTOR_SCHEMAS`。
 - 真实课件**不入库**（第三方版权）；测试夹具全部由 `tests/synth.py` 合成。
 - 本仓库是 **AIGC 项目**，见 `README.md` 的 AIGC 声明。
+- **分发二进制（exe/pyz）时必须同时提供完整对应源码**（GPLv3 §6）。
+- 修改版本必须显著标注修改（GPLv3 §5a），且不得追加额外限制。
+- **不要引入与非 GPL 兼容的依赖**（现有 lxml BSD-3、libxml2 MIT、Python PSF 都兼容）。
 
 ---
 

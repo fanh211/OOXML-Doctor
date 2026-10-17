@@ -101,7 +101,8 @@ class TestLicensing(unittest.TestCase):
         notice = os.path.join(self.ROOT, "src", "ooxml_doctor", "NOTICE.txt")
         self.assertTrue(os.path.isfile(notice), "NOTICE.txt 必须随包内嵌")
         text = open(notice, encoding="utf-8").read()
-        for needle in ("MIT License", "ISO/IEC", "Ecma International",
+        for needle in ("GNU GENERAL PUBLIC LICENSE", "Version 3", "ISO/IEC",
+                       "Ecma International",
                        "--no-schemas"):
             self.assertIn(needle, text, f"NOTICE.txt 缺关键内容：{needle}")
 

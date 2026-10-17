@@ -3,7 +3,7 @@
 本目录 12 个 `.xsd` 文件来自 **ISO/IEC 29500-4:2016**（等同 **ECMA-376 5th edition Part 4 Annex A**）。
 
 **Copyright (c) ISO/IEC and Ecma International. 保留所有权利。
-这些文件不受本项目 MIT 许可覆盖。**
+这些文件不受本项目 GPLv3 许可覆盖，是独立作品。**
 
 它们是**裸 schema**（文件内不含版权声明头），所以本文件就是你需要的出处说明。
 完整说明见仓库根目录的 `THIRD-PARTY-NOTICES.md`。

@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: GPL-3.0-only
+# Copyright (C) 2026 ooxml-doctor contributors
 """诊断模型。
 
 诊断码命名规则（见设计文档 §3.1）::

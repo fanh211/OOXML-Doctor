@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: GPL-3.0-only
+# Copyright (C) 2026 ooxml-doctor contributors
 """L3 —— XSD 校验（**完全离线**）。
 
 Schema 随包内置在 ``ooxml_doctor/schemas/``（12 个 ISO/IEC 29500-4:2016 XSD，412 KB），

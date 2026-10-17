@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: GPL-3.0-only
+# Copyright (C) 2026 ooxml-doctor contributors
 """验证靶场：证明“修复没有改坏东西”。
 
 五项等价性检查（设计文档 §8）：

@@ -1,6 +1,27 @@
 # 第三方组件与许可说明（THIRD-PARTY NOTICES）
 
-本文件说明 ooxml-doctor 里**不属于 MIT 许可**的部分。请与 `LICENSE` 一并保留。
+本文件说明 ooxml-doctor 里**不属于本项目 GPLv3 许可**的部分。请与 `LICENSE` 一并保留。
+
+## 0. 本项目的许可与"聚合"关系
+
+* **ooxml-doctor 自身的源码**：**GNU General Public License v3.0**（`GPL-3.0-only`），
+  全文见 `LICENSE`。
+* **`src/ooxml_doctor/schemas/*.xsd`（12 个 ISO/IEC 29500-4:2016 schema）**：
+  **不是本项目的作品，也不受 GPLv3 覆盖。** 它们由 ISO/IEC 与 Ecma International 发布，
+  本项目只是把它们与自己的代码**放在同一介质上分发（mere aggregation）**。
+* 依 GPLv3 的机制，聚合在同一个分发介质上的独立作品**不会**被并入本程序的许可范围
+  （GPLv3 §5 末段对"聚合"的说明）；反向亦然：本项目也无法把 GPLv3 的权利延伸到它们身上。
+* **正因如此**，本项目提供 `--no-schemas` 构建与 `--schemas DIR` 运行参数：
+  分发者若需要一份"许可上完全干净"的 GPLv3 产物，直接排除这些 schema 即可，
+  工具功能不受影响（仅关闭 `M1.20` 的 XSD 校验层）。
+
+### 分发 GPLv3 产物时的三项义务（提醒）
+
+| 义务 | 依据 | 本项目怎么满足 |
+|---|---|---|
+| 分发二进制须同时提供**完整对应源码** | GPLv3 §6 | 源码即本仓库；分发 exe/pyz 时请附上或给出仓库地址 |
+| 修改过的版本须**显著标注修改** | GPLv3 §5a | `AGENT.md` 要求维护者标注 |
+| 不得对 GPLv3 授予的权利**追加额外限制** | GPLv3 §10 | 请勿在分发时附加 EULA 式限制 |
 
 ---
 
@@ -27,7 +48,8 @@ shared-documentPropertiesVariantTypes.xsd  Shared
 
 **Copyright (c) ISO/IEC and Ecma International. 保留所有权利。**
 
-这些 schema 是国际标准文档的组成部分，**不受本项目的 MIT 许可覆盖**。
+这些 schema 是国际标准文档的组成部分，**不受本项目的 GPLv3 许可覆盖**，
+属于与本程序仅"聚合"的独立作品。
 文件本身**不含**任何版权声明头（它们就是裸 schema），因此你必须依赖本文件来获知出处。
 
 ### 出处

@@ -18,7 +18,7 @@
 > **这对使用者意味着什么：**
 >
 > - 工具的行为**不靠承诺，靠可复现的测试**。所有能力声明都能在 `tests/` 里找到证据。
-> - AIGC 产出**可能仍有错误**。软件按 MIT「AS IS」提供，不附带任何担保；
+> - AIGC 产出**可能仍有错误**。软件按 GPLv3 §15「AS IS」提供，不附带任何担保；
 >   用于正式场合前请自行复核。
 > - 开发过程中的 6 个真实 bug（含 2 个会让规则静默失效、1 个会**删掉整张幻灯片**）
 >   的成因与修复要点已浓缩进 [`AGENT.md`](AGENT.md) 的「红线」一节。
@@ -261,8 +261,8 @@ DOCX/XLSX、Web UI、任何联网行为（XSD 已内置，运行时零网络）�
 
 | 部分 | 许可 |
 |---|---|
-| 本工具源码 | **MIT** — [`LICENSE`](LICENSE) |
-| `src/ooxml_doctor/schemas/*.xsd`（12 个 ISO/IEC 29500-4:2016 schema） | **不属于 MIT**；版权 ISO/IEC 与 Ecma International |
+| 本工具源码 | **GPLv3**（`GPL-3.0-only`）— [`LICENSE`](LICENSE) |
+| `src/ooxml_doctor/schemas/*.xsd`（12 个 ISO/IEC 29500-4:2016 schema） | **不属于 GPLv3**；版权 ISO/IEC 与 Ecma International，仅与本程序"聚合" |
 | 运行时依赖 | lxml (BSD-3) / libxml2 (MIT) / Python (PSF) |
 
 本项目**不对**内置 schema 的再分发权利作任何声明。需要时：
@@ -274,5 +274,9 @@ export OOXML_DOCTOR_SCHEMAS=DIR
 ```
 
 排除后工具照常可用，仅关闭 `M1.20` 的 XSD 校验层（`selftest` 会明确报告“XSD 不可用”）。
+**分发 GPLv3 产物时**：必须同时提供完整对应源码（GPLv3 §6）；修改版本须显著标注修改（§5a）；
+不得追加额外限制（§10）。想得到"许可上完全干净"的 GPLv3 产物，用
+`build/build.py exe --no-schemas` 排除第三方 schema 即可。
+
 完整说明见 [`THIRD-PARTY-NOTICES.md`](THIRD-PARTY-NOTICES.md)。
 测试夹具全部**合成**；真实课件仅作本地校准，不进入发行物。

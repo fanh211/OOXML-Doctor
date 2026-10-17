@@ -1,47 +1,50 @@
-MIT License
+                    GNU GENERAL PUBLIC LICENSE
+                       Version 3, 29 June 2007
 
-Copyright (c) 2026 ooxml-doctor contributors
+ooxml-doctor
+Copyright (C) 2026 ooxml-doctor contributors
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, version 3.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
---------------------------------------------------------------------------------
-SCOPE NOTE — this MIT license covers the source code of ooxml-doctor ONLY.
-
-It does NOT cover:
-
-  1. src/ooxml_doctor/schemas/*.xsd
-     ISO/IEC 29500-4:2016 (== ECMA-376, 5th edition, Part 4, Annex A) XML schemas.
-     Copyright (c) ISO/IEC and Ecma International. See THIRD-PARTY-NOTICES.md.
-
-  2. spec/*.json
-     Short excerpted / paraphrased normative requirements from ECMA-376.
-     Copyright (c) Ecma International and ISO/IEC. See THIRD-PARTY-NOTICES.md.
-
-If you redistribute this software, keep those files' notices with them, or
-build without them (`python build/build.py exe --no-schemas`).
-
+The full license text is in the LICENSE file of this distribution.
+This program is licensed under GPLv3 ONLY (not "or later").
 
 ================================================================
 
 # 第三方组件与许可说明（THIRD-PARTY NOTICES）
 
-本文件说明 ooxml-doctor 里**不属于 MIT 许可**的部分。请与 `LICENSE` 一并保留。
+本文件说明 ooxml-doctor 里**不属于本项目 GPLv3 许可**的部分。请与 `LICENSE` 一并保留。
+
+## 0. 本项目的许可与"聚合"关系
+
+* **ooxml-doctor 自身的源码**：**GNU General Public License v3.0**（`GPL-3.0-only`），
+  全文见 `LICENSE`。
+* **`src/ooxml_doctor/schemas/*.xsd`（12 个 ISO/IEC 29500-4:2016 schema）**：
+  **不是本项目的作品，也不受 GPLv3 覆盖。** 它们由 ISO/IEC 与 Ecma International 发布，
+  本项目只是把它们与自己的代码**放在同一介质上分发（mere aggregation）**。
+* 依 GPLv3 的机制，聚合在同一个分发介质上的独立作品**不会**被并入本程序的许可范围
+  （GPLv3 §5 末段对"聚合"的说明）；反向亦然：本项目也无法把 GPLv3 的权利延伸到它们身上。
+* **正因如此**，本项目提供 `--no-schemas` 构建与 `--schemas DIR` 运行参数：
+  分发者若需要一份"许可上完全干净"的 GPLv3 产物，直接排除这些 schema 即可，
+  工具功能不受影响（仅关闭 `M1.20` 的 XSD 校验层）。
+
+### 分发 GPLv3 产物时的三项义务（提醒）
+
+| 义务 | 依据 | 本项目怎么满足 |
+|---|---|---|
+| 分发二进制须同时提供**完整对应源码** | GPLv3 §6 | 源码即本仓库；分发 exe/pyz 时请附上或给出仓库地址 |
+| 修改过的版本须**显著标注修改** | GPLv3 §5a | `AGENT.md` 要求维护者标注 |
+| 不得对 GPLv3 授予的权利**追加额外限制** | GPLv3 §10 | 请勿在分发时附加 EULA 式限制 |
 
 ---
 
@@ -68,7 +71,8 @@ shared-documentPropertiesVariantTypes.xsd  Shared
 
 **Copyright (c) ISO/IEC and Ecma International. 保留所有权利。**
 
-这些 schema 是国际标准文档的组成部分，**不受本项目的 MIT 许可覆盖**。
+这些 schema 是国际标准文档的组成部分，**不受本项目的 GPLv3 许可覆盖**，
+属于与本程序仅"聚合"的独立作品。
 文件本身**不含**任何版权声明头（它们就是裸 schema），因此你必须依赖本文件来获知出处。
 
 ### 出处
@@ -116,21 +120,7 @@ export OOXML_DOCTOR_SCHEMAS=/path/to/my/ISO-IEC29500-4_2016
 
 ---
 
-## 2. 规范条款摘录（`spec/annex_h.json`、`spec/asc_index.json`）
-
-`spec/` 下两个 JSON 是对 **ECMA-376 Part 2 Annex H**（OPC 合规条款表）与
-**Part 4「Additional Syntax Constraints」** 的**摘要式转述**，用于让每条诊断都能
-追溯到规范条款号。
-
-* **Copyright (c) Ecma International and ISO/IEC.**
-* 同样**不受** MIT 覆盖。
-* 内容为简短转述与条款编号，非规范全文；引用目的为可追溯性。
-* 若你认为这构成不当引用，删除 `spec/` 目录不会影响任何运行逻辑
-  （代码不读取这两个文件，它们纯属文档）。
-
----
-
-## 3. 运行时依赖
+## 2. 运行时依赖
 
 | 依赖 | 许可 | 是否随包分发 |
 |---|---|---|
@@ -142,17 +132,17 @@ export OOXML_DOCTOR_SCHEMAS=/path/to/my/ISO-IEC29500-4_2016
 
 ---
 
-## 4. 可选的外部工具（**不随包分发**）
+## 3. 可选的外部工具（**不随包分发**）
 
 | 工具 | 用途 | 说明 |
 |---|---|---|
-| **LibreOffice**（`soffice`） | `verify --render` 的渲染 oracle | 仅**测试/归档**用，见 `docs/validation/`。工具不依赖它；Windows 上只做修复完全用不到 |
+| **LibreOffice**（`soffice`） | `verify --render` 的渲染 oracle | 仅**测试**用（`tests/run_validation.sh`）。工具不依赖它；Windows 上只做修复完全用不到 |
 | **pdftotext / pdfinfo**（poppler） | 同上 | 同上 |
 | **PyInstaller** | 构建单文件 exe | 仅构建期依赖 |
 
 ---
 
-## 5. 测试夹具
+## 4. 测试夹具
 
 `tests/` 下的夹具全部**合成**（`tests/synth.py` 现场生成），
 **不包含**任何第三方课件或教材内容。

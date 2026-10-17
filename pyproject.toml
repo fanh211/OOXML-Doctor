@@ -8,7 +8,7 @@ version = "0.1.0.dev0"
 description = "Diagnose and repair damaged PPTX; every diagnostic carries an ECMA-376 / ISO-IEC 29500 clause ID"
 readme = "README.md"
 requires-python = ">=3.10"
-license = "MIT"
+license = "GPL-3.0-only"
 license-files = ["LICENSE", "THIRD-PARTY-NOTICES.md"]
 keywords = ["pptx", "ooxml", "ecma-376", "iso-29500", "repair", "validator", "powerpoint"]
 classifiers = [

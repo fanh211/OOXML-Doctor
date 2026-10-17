@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: GPL-3.0-only
+# Copyright (C) 2026 ooxml-doctor contributors
 """Rust 风格报告渲染器。
 
 设计目标：**人类可读优先**。

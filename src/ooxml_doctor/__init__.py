@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: GPL-3.0-only
+# Copyright (C) 2026 ooxml-doctor contributors
 """ooxml-doctor — PPTX 损坏诊断与修复。
 
 规范基线：

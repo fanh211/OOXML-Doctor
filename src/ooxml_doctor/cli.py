@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: GPL-3.0-only
+# Copyright (C) 2026 ooxml-doctor contributors
 """命令行入口。
 
     ooxml-doctor scan   文件.pptx              # 扫描并给出 Rust 风格报告

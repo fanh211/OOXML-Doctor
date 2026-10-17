@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: GPL-3.0-only
+# Copyright (C) 2026 ooxml-doctor contributors
 """L1 — OPC 包模型层。
 
 规范依据：ECMA-376 Part 2 (OPC) 主题 1 "Package Model"（M1.x / O1.x）

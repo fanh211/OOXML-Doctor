@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: GPL-3.0-only
+# Copyright (C) 2026 ooxml-doctor contributors
 """L0 — ZIP 物理层。
 
 不用 ``zipfile``：它太宽容，会静默忽略我们想报告的容器缺陷。

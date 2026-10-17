@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: GPL-3.0-only
+# Copyright (C) 2026 ooxml-doctor contributors
 """两级修复引擎。
 
   --level low   最小修复：只做**语义不变**的规范化，目标是“保证能放映”。

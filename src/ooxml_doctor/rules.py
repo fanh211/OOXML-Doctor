@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: GPL-3.0-only
+# Copyright (C) 2026 ooxml-doctor contributors
 """L4 语义规则 + L5 来源/安全指纹。
 
 L4 依据：ECMA-376 Part 4 "Additional Syntax Constraints" 专章

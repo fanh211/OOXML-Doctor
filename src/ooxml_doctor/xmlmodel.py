@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: GPL-3.0-only
+# Copyright (C) 2026 ooxml-doctor contributors
 """XML 层（L2）：良构性、编码（M1.17）、DTD（M1.18）、MCE 存在性（M1.19）。
 
 用 expat 自建带**字节偏移**的轻量 DOM：
